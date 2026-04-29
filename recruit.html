@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>採用情報 | 村山電設</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;600;700&family=Noto+Sans+JP:wght@300;400;500;700&family=Oswald:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --navy:       #1c3050;
+  --navy-dark:  #101e33;
+  --navy-mid:   #243d65;
+  --yellow:     #e8d44d;
+  --yellow-lt:  #f5e96a;
+  --yellow-pale:#fdf9dc;
+  --white:      #ffffff;
+  --off-white:  #f6f8fa;
+  --gray-light: #e4e9ef;
+  --gray:       #7a8898;
+  --text:       #1c3050;
+  --text-light: #4a5a6a;
+  --serif: 'Noto Serif JP', serif;
+  --sans:  'Noto Sans JP', sans-serif;
+  --display: 'Oswald', sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);color:var(--text);background:var(--white);overflow-x:hidden}
+a{text-decoration:none;color:inherit}
+img{max-width:100%;display:block}
+
+/* HEADER */
+.site-header{position:fixed;top:0;left:0;right:0;z-index:1000;background:var(--navy-dark);display:flex;align-items:center;justify-content:space-between;padding:0 24px;height:68px;box-shadow:0 2px 12px rgba(0,0,0,0.35)}
+.logo a{display:flex;align-items:center;gap:12px;color:var(--white)}
+.logo-mark{width:42px;height:42px;background:var(--yellow);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.logo-mark svg{width:26px;height:26px;fill:var(--navy-dark)}
+.logo-text .company{font-family:var(--serif);font-size:15px;font-weight:700;letter-spacing:0.06em;color:#fff}
+.logo-text .tagline{font-size:10px;color:rgba(255,255,255,0.5);letter-spacing:0.12em;margin-top:2px}
+.global-nav ul{display:flex;list-style:none;gap:2px}
+.global-nav a{display:block;padding:8px 13px;font-size:12.5px;font-weight:500;letter-spacing:0.05em;color:rgba(255,255,255,0.75);transition:color .2s,background .2s;border-radius:3px}
+.global-nav a:hover,.global-nav a.active{color:var(--yellow-lt);background:rgba(255,255,255,0.07)}
+.header-right{display:flex;align-items:center;gap:16px}
+.header-tel{color:white;text-align:right;line-height:1.3}
+.header-tel .tel-label{font-size:10px;color:rgba(255,255,255,0.5)}
+.header-tel .tel-num{font-family:var(--display);font-size:20px;font-weight:600;letter-spacing:0.06em;color:var(--yellow-lt)}
+.btn-header{background:var(--yellow);color:var(--navy-dark);font-size:12px;font-weight:700;padding:10px 18px;letter-spacing:0.05em;border:none;cursor:pointer;transition:background .2s;white-space:nowrap;display:inline-block}
+.btn-header:hover{background:var(--yellow-lt)}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:8px}
+.hamburger span{display:block;width:24px;height:2px;background:white;transition:.3s}
+.hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.hamburger.open span:nth-child(2){opacity:0}
+.hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.mobile-menu{display:none;position:fixed;inset:0;top:68px;background:var(--navy-dark);z-index:999;padding:40px 24px;flex-direction:column;gap:4px}
+.mobile-menu.open{display:flex}
+.mobile-menu a{display:block;padding:14px 0;font-size:16px;font-weight:500;color:rgba(255,255,255,0.85);border-bottom:1px solid rgba(255,255,255,0.1);letter-spacing:0.05em}
+.mobile-menu .m-tel{margin-top:24px;font-family:var(--display);font-size:28px;font-weight:700;color:var(--yellow-lt)}
+
+/* PAGE HERO */
+.page-hero{margin-top:68px;background:linear-gradient(135deg,var(--navy-dark) 0%,var(--navy-mid) 100%);padding:80px 24px 72px;text-align:center;position:relative;overflow:hidden}
+.page-hero::before{content:'';position:absolute;inset:0;background-image:radial-gradient(rgba(232,212,77,0.07) 1.5px,transparent 1.5px);background-size:32px 32px}
+.page-hero-label{font-family:var(--display);font-size:12px;font-weight:700;letter-spacing:0.25em;color:var(--yellow);text-transform:uppercase;margin-bottom:12px;position:relative;z-index:1}
+.page-hero h1{font-family:var(--serif);font-size:clamp(28px,4vw,44px);font-weight:700;color:#fff;letter-spacing:0.04em;margin-bottom:14px;position:relative;z-index:1}
+.page-hero p{font-size:15px;color:rgba(255,255,255,0.65);position:relative;z-index:1;line-height:1.85}
+.breadcrumb{position:relative;z-index:1;display:flex;justify-content:center;gap:8px;font-size:12px;color:rgba(255,255,255,0.45);margin-top:20px}
+.breadcrumb a{color:rgba(255,255,255,0.45);transition:color .2s}
+.breadcrumb a:hover{color:var(--yellow-lt)}
+
+/* SECTION */
+.section{padding:96px 0}
+.section-inner{max-width:1160px;margin:0 auto;padding:0 24px}
+.section-label{font-family:var(--display);font-size:11px;font-weight:700;letter-spacing:0.2em;color:var(--yellow);text-transform:uppercase;margin-bottom:10px}
+.section-title{font-family:var(--serif);font-size:clamp(22px,3vw,34px);font-weight:700;color:var(--navy);line-height:1.4;margin-bottom:16px;letter-spacing:0.03em}
+
+/* fade-up */
+.fade-up{opacity:0;transform:translateY(32px);transition:opacity .7s ease,transform .7s ease}
+.fade-up.visible{opacity:1;transform:translateY(0)}
+
+/* APPEAL */
+.appeal-section{background:var(--navy-dark);padding:96px 0}
+.appeal-section .section-title{color:#fff}
+.appeal-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;margin-top:56px}
+.appeal-card{
+  background:var(--navy-mid);padding:36px 28px;
+  border-top:4px solid var(--yellow);
+  transition:background .3s;
+}
+.appeal-card:hover{background:rgba(36,61,101,0.7)}
+.appeal-icon{
+  width:52px;height:52px;background:var(--yellow);
+  display:flex;align-items:center;justify-content:center;
+  margin-bottom:20px;
+}
+.appeal-icon svg{width:28px;height:28px;fill:var(--navy-dark)}
+.appeal-title{
+  font-family:var(--serif);font-size:17px;font-weight:700;
+  color:#fff;margin-bottom:12px;letter-spacing:0.03em;
+}
+.appeal-text{font-size:13px;color:rgba(255,255,255,0.65);line-height:1.85}
+
+/* VOICES */
+.voices-section{background:var(--off-white);padding:96px 0;position:relative}
+.voices-section::before{content:'';position:absolute;inset:0;background-image:radial-gradient(var(--gray-light) 1.5px,transparent 1.5px);background-size:28px 28px;opacity:0.5}
+.voices-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:56px;position:relative;z-index:1}
+.voice-card{
+  background:var(--white);padding:32px 28px;
+  border-left:4px solid var(--yellow);
+  position:relative;
+}
+.voice-quote{
+  font-family:var(--display);font-size:48px;
+  color:var(--yellow);opacity:0.5;line-height:1;
+  margin-bottom:8px;
+}
+.voice-text{
+  font-size:14px;color:var(--text-light);line-height:1.9;
+  margin-bottom:20px;
+}
+.voice-name{
+  font-weight:700;color:var(--navy);font-size:14px;
+  border-top:1px solid var(--gray-light);padding-top:14px;
+}
+.voice-role{font-size:12px;color:var(--gray);margin-top:4px}
+
+/* JOB TABLE */
+.job-section{padding:96px 0}
+.job-table{width:100%;border-collapse:collapse;margin-top:40px}
+.job-table tr{border-bottom:1px solid var(--gray-light)}
+.job-table tr:first-child{border-top:1px solid var(--gray-light)}
+.job-table th{width:180px;padding:22px 24px;text-align:left;font-size:13px;font-weight:700;color:var(--navy);background:var(--yellow-pale);vertical-align:top;letter-spacing:0.04em}
+.job-table td{padding:22px 24px;font-size:14px;color:var(--text-light);line-height:1.85}
+.tag{display:inline-block;background:var(--navy);color:var(--yellow);font-size:10px;font-weight:700;letter-spacing:0.1em;padding:3px 10px;margin-right:6px;margin-bottom:4px}
+.tag-green{background:#1a5c3e;color:#a8e6c8}
+
+/* FLOW */
+.flow-section{background:var(--navy-dark);padding:96px 0}
+.flow-section .section-title{color:#fff}
+.flow-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:56px;position:relative}
+.flow-grid::before{content:'';position:absolute;top:36px;left:calc(12.5% + 36px);right:calc(12.5% + 36px);height:2px;background:var(--yellow);z-index:0}
+.flow-step{text-align:center;padding:0 16px;position:relative}
+.flow-num{width:72px;height:72px;border-radius:50%;background:var(--navy-mid);border:3px solid var(--yellow);display:flex;align-items:center;justify-content:center;margin:0 auto 24px;position:relative;z-index:1;font-family:var(--display);font-size:22px;font-weight:700;color:var(--yellow)}
+.flow-title{font-family:var(--serif);font-size:15px;font-weight:700;color:#fff;margin-bottom:10px}
+.flow-text{font-size:13px;color:rgba(255,255,255,0.6);line-height:1.8}
+
+/* CTA */
+.cta-section{
+  background:linear-gradient(90deg,var(--yellow) 0%,var(--yellow-lt) 50%,var(--yellow) 100%);
+  padding:72px 24px;text-align:center;
+}
+.cta-section h2{font-family:var(--serif);font-size:clamp(22px,3vw,34px);font-weight:700;color:var(--navy-dark);margin-bottom:12px;letter-spacing:0.03em}
+.cta-section p{font-size:14px;color:var(--navy-mid);margin-bottom:32px;line-height:1.8}
+.btn-dark{display:inline-block;background:var(--navy-dark);color:#fff;font-size:14px;font-weight:700;padding:18px 48px;letter-spacing:0.1em;transition:background .2s,transform .2s}
+.btn-dark:hover{background:var(--navy);transform:translateY(-2px)}
+
+/* FOOTER */
+.site-footer{background:var(--navy-dark);padding:64px 0 0;color:rgba(255,255,255,0.7)}
+.footer-inner{max-width:1160px;margin:0 auto;padding:0 24px;display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:48px}
+.footer-logo a{display:flex;align-items:center;gap:12px;margin-bottom:16px}
+.footer-logo .company{font-family:var(--serif);font-size:16px;font-weight:700;color:#fff}
+.footer-logo .tagline{font-size:10px;color:rgba(255,255,255,0.45);letter-spacing:0.12em;margin-top:2px}
+.footer-desc{font-size:13px;line-height:1.85;margin-bottom:20px}
+.footer-tel{font-family:var(--display);font-size:24px;font-weight:700;color:var(--yellow-lt)}
+.footer-address{font-size:12px;margin-top:8px;line-height:1.7}
+.footer-col h4{font-size:12px;font-weight:700;letter-spacing:0.12em;color:var(--yellow);text-transform:uppercase;margin-bottom:20px;padding-bottom:8px;border-bottom:1px solid rgba(255,255,255,0.1)}
+.footer-col ul{list-style:none}
+.footer-col ul li{margin-bottom:10px}
+.footer-col ul li a{font-size:13px;color:rgba(255,255,255,0.65);transition:color .2s}
+.footer-col ul li a:hover{color:var(--yellow-lt)}
+.footer-bottom{margin-top:48px;padding:20px 24px;border-top:1px solid rgba(255,255,255,0.1);text-align:center;font-size:12px;color:rgba(255,255,255,0.35)}
+
+@media(max-width:900px){
+  .global-nav,.header-tel,.btn-header{display:none}
+  .hamburger{display:flex}
+  .appeal-grid{grid-template-columns:repeat(2,1fr)}
+  .voices-grid{grid-template-columns:1fr}
+  .flow-grid{grid-template-columns:repeat(2,1fr);gap:32px}
+  .flow-grid::before{display:none}
+  .job-table th{width:130px;padding:16px}
+  .job-table td{padding:16px}
+  .footer-inner{grid-template-columns:1fr}
+}
+@media(max-width:600px){
+  .appeal-grid{grid-template-columns:1fr}
+  .section{padding:64px 0}
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="site-header">
+  <div class="logo">
+    <a href="index.html">
+      <div class="logo-mark">
+        <svg viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+      </div>
+      <div class="logo-text">
+        <div class="company">村山電設</div>
+        <div class="tagline">MURAYAMA DENSETSU</div>
+      </div>
+    </a>
+  </div>
+  <nav class="global-nav">
+    <ul>
+      <li><a href="index.html">TOP</a></li>
+      <li><a href="service.html">施工案内</a></li>
+      <li><a href="works.html">施工実績</a></li>
+      <li><a href="company.html">会社概要</a></li>
+      <li><a href="recruit.html" class="active">採用情報</a></li>
+      <li><a href="contact.html">お問い合わせ</a></li>
+    </ul>
+  </nav>
+  <div class="header-right">
+    <div class="header-tel">
+      <div class="tel-label">お気軽にご相談ください</div>
+      <div class="tel-num">048-989-6501</div>
+    </div>
+    <a href="contact.html" class="btn-header">無料相談</a>
+  </div>
+  <button class="hamburger" id="hamburger" aria-label="メニュー">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+<nav class="mobile-menu" id="mobile-menu">
+  <a href="index.html">TOP</a>
+  <a href="service.html">施工案内</a>
+  <a href="works.html">施工実績</a>
+  <a href="company.html">会社概要</a>
+  <a href="recruit.html">採用情報</a>
+  <a href="contact.html">お問い合わせ</a>
+  <div class="m-tel">048-989-6501</div>
+</nav>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <div class="page-hero-label">RECRUIT</div>
+  <h1>採用情報</h1>
+  <p>電気のプロとして、地域の暮らしを支える仕事をしませんか</p>
+  <div class="breadcrumb">
+    <a href="index.html">TOP</a><span>›</span><span>採用情報</span>
+  </div>
+</div>
+
+<!-- APPEAL -->
+<section class="appeal-section">
+  <div class="section-inner">
+    <div class="fade-up">
+      <div class="section-label">WHY JOIN US</div>
+      <h2 class="section-title">村山電設で働く魅力</h2>
+    </div>
+    <div class="appeal-grid">
+      <div class="appeal-card fade-up">
+        <div class="appeal-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 3L1 9l4 2.18V15c0 .88.48 1.65 1.2 2.06l5.8 3.14 5.8-3.14c.72-.41 1.2-1.18 1.2-2.06v-3.82L17 9.5V18h2V9L12 3z"/></svg>
+        </div>
+        <div class="appeal-title">資格取得を全力サポート</div>
+        <p class="appeal-text">電気工事士・施工管理技士などの資格取得費用を会社が全額負担。未経験者でも安心してキャリアを積めます。</p>
+      </div>
+      <div class="appeal-card fade-up" style="transition-delay:.1s">
+        <div class="appeal-icon">
+          <svg viewBox="0 0 24 24"><path d="M11.8 10.9c-2.27-.59-3-1.2-3-2.15 0-1.09 1.01-1.85 2.7-1.85 1.78 0 2.44.85 2.5 2.1h2.21c-.07-1.72-1.12-3.3-3.21-3.81V3h-3v2.16c-1.94.42-3.5 1.68-3.5 3.61 0 2.31 1.91 3.46 4.7 4.13 2.5.6 3 1.48 3 2.41 0 .69-.49 1.79-2.7 1.79-2.06 0-2.87-.92-2.98-2.1h-2.2c.12 2.19 1.76 3.42 3.68 3.83V21h3v-2.15c1.95-.37 3.5-1.5 3.5-3.55 0-2.84-2.43-3.81-4.7-4.4z"/></svg>
+        </div>
+        <div class="appeal-title">安定した収入と各種手当</div>
+        <p class="appeal-text">月給制で安定した収入。資格手当・残業手当・交通費全額支給など充実した待遇で長く働ける環境を整えています。</p>
+      </div>
+      <div class="appeal-card fade-up" style="transition-delay:.2s">
+        <div class="appeal-icon">
+          <svg viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
+        </div>
+        <div class="appeal-title">風通しの良い職場環境</div>
+        <p class="appeal-text">少数精鋭のチームで、代表との距離が近い風通しの良い職場。気になることは何でも相談しやすい環境です。</p>
+      </div>
+      <div class="appeal-card fade-up" style="transition-delay:.3s">
+        <div class="appeal-icon">
+          <svg viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+        </div>
+        <div class="appeal-title">未経験者・第二新卒歓迎</div>
+        <p class="appeal-text">経験・学歴不問。先輩スタッフが丁寧に指導するOJT制度で、ゼロからプロの電気工事士を目指せます。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VOICES -->
+<section class="voices-section">
+  <div class="section-inner">
+    <div class="fade-up">
+      <div class="section-label">STAFF VOICE</div>
+      <h2 class="section-title">スタッフの声</h2>
+    </div>
+    <div class="voices-grid">
+      <div class="voice-card fade-up">
+        <div class="voice-quote">"</div>
+        <p class="voice-text">未経験でも先輩が丁寧に教えてくれるので安心でした。入社1年で二種電気工事士に合格でき、今は一人で現場を担当しています。地域のお客様に「ありがとう」と言ってもらえる仕事がとても好きです。</p>
+        <div class="voice-name">田中 雄大（仮名）</div>
+        <div class="voice-role">電気工事士 / 入社3年目</div>
+      </div>
+      <div class="voice-card fade-up" style="transition-delay:.15s">
+        <div class="voice-quote">"</div>
+        <p class="voice-text">以前は全く別の仕事をしていましたが、手に職をつけたいと思い転職しました。資格取得費用を会社が出してくれるので、経済的な不安なく勉強に集中できています。毎日新しい発見があって楽しいです。</p>
+        <div class="voice-name">佐藤 健一（仮名）</div>
+        <div class="voice-role">電気工事士 / 入社2年目・前職：営業職</div>
+      </div>
+      <div class="voice-card fade-up" style="transition-delay:.3s">
+        <div class="voice-quote">"</div>
+        <p class="voice-text">日曜・祝日がしっかり休めるので、家族との時間を大切にしながら働けています。仕事も少しずつできることが増えて、やりがいを感じています。もっとスキルアップして資格も増やしていきたいです。</p>
+        <div class="voice-name">鈴木 航（仮名）</div>
+        <div class="voice-role">電気工事士 / 入社1年目</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- JOB TABLE -->
+<section class="job-section">
+  <div class="section-inner">
+    <div class="fade-up">
+      <div class="section-label">JOB DETAILS</div>
+      <h2 class="section-title">求人詳細</h2>
+    </div>
+    <table class="job-table fade-up">
+      <tr>
+        <th>職種</th>
+        <td>
+          <span class="tag">正社員</span>電気工事士（施工スタッフ）<br>
+          <span style="font-size:12px;color:var(--gray)">※経験者・未経験者どちらも歓迎</span>
+        </td>
+      </tr>
+      <tr>
+        <th>仕事内容</th>
+        <td>
+          住宅・店舗・工場・施設等における各種電気工事の施工<br>
+          （配線工事・照明設置・分電盤工事・太陽光設備工事 など）
+        </td>
+      </tr>
+      <tr>
+        <th>給与</th>
+        <td>
+          月給 230,000円〜350,000円（経験・能力により優遇）<br>
+          <span style="font-size:12px;color:var(--gray)">※試用期間3ヶ月：月給 210,000円〜</span>
+        </td>
+      </tr>
+      <tr>
+        <th>勤務時間</th>
+        <td>8:00〜18:00（実働8時間）<br>休憩60分 / 時間外あり（手当別途支給）</td>
+      </tr>
+      <tr>
+        <th>休日・休暇</th>
+        <td>
+          日曜日・祝日・年末年始・夏季休暇<br>
+          <span style="font-size:12px;color:var(--gray)">年間休日104日以上</span>
+        </td>
+      </tr>
+      <tr>
+        <th>待遇・福利厚生</th>
+        <td>
+          各種社会保険完備（雇用・労災・健康・厚生年金）<br>
+          交通費全額支給 / 資格取得費用会社負担 / 資格手当支給<br>
+          制服・工具支給 / 昇給年1回 / 賞与年2回（業績による）
+        </td>
+      </tr>
+      <tr>
+        <th>応募資格</th>
+        <td>
+          学歴・経験不問（未経験者歓迎）<br>
+          普通自動車免許（AT限定可）<br>
+          <span class="tag-green tag">あると尚可</span>第二種電気工事士 / 第一種電気工事士
+        </td>
+      </tr>
+      <tr>
+        <th>勤務地</th>
+        <td>
+          埼玉県越谷市大間野町４－２１４－４（本社）<br>
+          ※現場は埼玉県内・東京都一部
+        </td>
+      </tr>
+    </table>
+  </div>
+</section>
+
+<!-- APPLY FLOW -->
+<section class="flow-section">
+  <div class="section-inner">
+    <div class="fade-up">
+      <div class="section-label">HOW TO APPLY</div>
+      <h2 class="section-title">応募の流れ</h2>
+    </div>
+    <div class="flow-grid">
+      <div class="flow-step fade-up">
+        <div class="flow-num">01</div>
+        <div class="flow-title">応募・お問い合わせ</div>
+        <p class="flow-text">お問い合わせフォームまたはお電話からご応募ください。簡単な内容を教えていただければ大丈夫です。</p>
+      </div>
+      <div class="flow-step fade-up" style="transition-delay:.15s">
+        <div class="flow-num">02</div>
+        <div class="flow-title">書類選考</div>
+        <p class="flow-text">履歴書（市販のもので可）をご提出ください。1週間以内に結果をご連絡いたします。</p>
+      </div>
+      <div class="flow-step fade-up" style="transition-delay:.3s">
+        <div class="flow-num">03</div>
+        <div class="flow-title">面接</div>
+        <p class="flow-text">代表・担当者との面接を実施します。仕事内容や待遇について詳しくお話しします。気軽にご参加ください。</p>
+      </div>
+      <div class="flow-step fade-up" style="transition-delay:.45s">
+        <div class="flow-num">04</div>
+        <div class="flow-title">内定・入社</div>
+        <p class="flow-text">採用が決まれば入社日を調整します。在職中の方は退職時期に合わせた日程調整も可能です。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="section-inner">
+    <div class="fade-up">
+      <div class="section-label" style="color:var(--navy-mid)">APPLY NOW</div>
+      <h2>一緒に働きませんか？</h2>
+      <p>
+        ご不明な点はお気軽にお問い合わせください。<br>
+        まずは「話だけ聞きたい」という方も大歓迎です。
+      </p>
+      <a href="contact.html" class="btn-dark">応募・問い合わせフォームへ</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div>
+      <div class="footer-logo">
+        <a href="index.html">
+          <div style="width:36px;height:36px;background:var(--yellow);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+            <svg viewBox="0 0 24 24" style="width:22px;height:22px;fill:var(--navy-dark)"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+          </div>
+          <div class="logo-text">
+            <div class="company">村山電設</div>
+            <div class="tagline">MURAYAMA DENSETSU</div>
+          </div>
+        </a>
+      </div>
+      <p class="footer-desc">越谷市を中心に埼玉東部エリアの電気工事を20年以上担ってきた地域密着の電気工事店。住宅から工場まで幅広く対応します。</p>
+      <div class="footer-tel">048-989-6501</div>
+      <div class="footer-address">〒343-0822 埼玉県越谷市大間野町４－２１４－４<br>受付 8:00〜18:00（日曜・祝日定休）</div>
+    </div>
+    <div class="footer-col">
+      <h4>Services</h4>
+      <ul>
+        <li><a href="service.html">一般住宅電気工事</a></li>
+        <li><a href="service.html">店舗・事務所電気工事</a></li>
+        <li><a href="service.html">工場・設備電気工事</a></li>
+        <li><a href="service.html">太陽光・省エネ設備</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Pages</h4>
+      <ul>
+        <li><a href="index.html">TOP</a></li>
+        <li><a href="service.html">施工案内</a></li>
+        <li><a href="works.html">施工実績</a></li>
+        <li><a href="company.html">会社概要</a></li>
+        <li><a href="recruit.html">採用情報</a></li>
+        <li><a href="contact.html">お問い合わせ</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">© 2024 村山電設 All Rights Reserved.</div>
+</footer>
+
+<script>
+const ham = document.getElementById('hamburger');
+const menu = document.getElementById('mobile-menu');
+ham.addEventListener('click', () => {
+  ham.classList.toggle('open');
+  menu.classList.toggle('open');
+});
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); });
+}, {threshold: 0.1});
+document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>

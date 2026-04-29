@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>会社概要 | 村山電設</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;600;700&family=Noto+Sans+JP:wght@300;400;500;700&family=Oswald:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --navy:       #1c3050;
+  --navy-dark:  #101e33;
+  --navy-mid:   #243d65;
+  --yellow:     #e8d44d;
+  --yellow-lt:  #f5e96a;
+  --yellow-pale:#fdf9dc;
+  --white:      #ffffff;
+  --off-white:  #f6f8fa;
+  --gray-light: #e4e9ef;
+  --gray:       #7a8898;
+  --text:       #1c3050;
+  --text-light: #4a5a6a;
+  --serif: 'Noto Serif JP', serif;
+  --sans:  'Noto Sans JP', sans-serif;
+  --display: 'Oswald', sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);color:var(--text);background:var(--white);overflow-x:hidden}
+a{text-decoration:none;color:inherit}
+img{max-width:100%;display:block}
+
+/* HEADER */
+.site-header{position:fixed;top:0;left:0;right:0;z-index:1000;background:var(--navy-dark);display:flex;align-items:center;justify-content:space-between;padding:0 24px;height:68px;box-shadow:0 2px 12px rgba(0,0,0,0.35)}
+.logo a{display:flex;align-items:center;gap:12px;color:var(--white)}
+.logo-mark{width:42px;height:42px;background:var(--yellow);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.logo-mark svg{width:26px;height:26px;fill:var(--navy-dark)}
+.logo-text .company{font-family:var(--serif);font-size:15px;font-weight:700;letter-spacing:0.06em;color:#fff}
+.logo-text .tagline{font-size:10px;color:rgba(255,255,255,0.5);letter-spacing:0.12em;margin-top:2px}
+.global-nav ul{display:flex;list-style:none;gap:2px}
+.global-nav a{display:block;padding:8px 13px;font-size:12.5px;font-weight:500;letter-spacing:0.05em;color:rgba(255,255,255,0.75);transition:color .2s,background .2s;border-radius:3px}
+.global-nav a:hover,.global-nav a.active{color:var(--yellow-lt);background:rgba(255,255,255,0.07)}
+.header-right{display:flex;align-items:center;gap:16px}
+.header-tel{color:white;text-align:right;line-height:1.3}
+.header-tel .tel-label{font-size:10px;color:rgba(255,255,255,0.5)}
+.header-tel .tel-num{font-family:var(--display);font-size:20px;font-weight:600;letter-spacing:0.06em;color:var(--yellow-lt)}
+.btn-header{background:var(--yellow);color:var(--navy-dark);font-size:12px;font-weight:700;padding:10px 18px;letter-spacing:0.05em;border:none;cursor:pointer;transition:background .2s;white-space:nowrap;display:inline-block}
+.btn-header:hover{background:var(--yellow-lt)}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:8px}
+.hamburger span{display:block;width:24px;height:2px;background:white;transition:.3s}
+.hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.hamburger.open span:nth-child(2){opacity:0}
+.hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.mobile-menu{display:none;position:fixed;inset:0;top:68px;background:var(--navy-dark);z-index:999;padding:40px 24px;flex-direction:column;gap:4px}
+.mobile-menu.open{display:flex}
+.mobile-menu a{display:block;padding:14px 0;font-size:16px;font-weight:500;color:rgba(255,255,255,0.85);border-bottom:1px solid rgba(255,255,255,0.1);letter-spacing:0.05em}
+.mobile-menu .m-tel{margin-top:24px;font-family:var(--display);font-size:28px;font-weight:700;color:var(--yellow-lt)}
+
+/* PAGE HERO */
+.page-hero{margin-top:68px;background:linear-gradient(135deg,var(--navy-dark) 0%,var(--navy-mid) 100%);padding:80px 24px 72px;text-align:center;position:relative;overflow:hidden}
+.page-hero::before{content:'';position:absolute;inset:0;background-image:radial-gradient(rgba(232,212,77,0.07) 1.5px,transparent 1.5px);background-size:32px 32px}
+.page-hero-label{font-family:var(--display);font-size:12px;font-weight:700;letter-spacing:0.25em;color:var(--yellow);text-transform:uppercase;margin-bottom:12px;position:relative;z-index:1}
+.page-hero h1{font-family:var(--serif);font-size:clamp(28px,4vw,44px);font-weight:700;color:#fff;letter-spacing:0.04em;margin-bottom:14px;position:relative;z-index:1}
+.page-hero p{font-size:15px;color:rgba(255,255,255,0.65);position:relative;z-index:1;line-height:1.85}
+.breadcrumb{position:relative;z-index:1;display:flex;justify-content:center;gap:8px;font-size:12px;color:rgba(255,255,255,0.45);margin-top:20px}
+.breadcrumb a{color:rgba(255,255,255,0.45);transition:color .2s}
+.breadcrumb a:hover{color:var(--yellow-lt)}
+
+/* SECTION */
+.section{padding:96px 0}
+.section-inner{max-width:1160px;margin:0 auto;padding:0 24px}
+.section-label{font-family:var(--display);font-size:11px;font-weight:700;letter-spacing:0.2em;color:var(--yellow);text-transform:uppercase;margin-bottom:10px}
+.section-title{font-family:var(--serif);font-size:clamp(22px,3vw,34px);font-weight:700;color:var(--navy);line-height:1.4;margin-bottom:16px;letter-spacing:0.03em}
+
+/* fade-up */
+.fade-up{opacity:0;transform:translateY(32px);transition:opacity .7s ease,transform .7s ease}
+.fade-up.visible{opacity:1;transform:translateY(0)}
+
+/* MESSAGE */
+.message-section{background:var(--off-white);padding:96px 0;position:relative}
+.message-section::before{content:'';position:absolute;inset:0;background-image:radial-gradient(var(--gray-light) 1.5px,transparent 1.5px);background-size:28px 28px;opacity:0.5}
+.message-inner{
+  max-width:1160px;margin:0 auto;padding:0 24px;
+  display:grid;grid-template-columns:1fr 1.5fr;gap:72px;align-items:center;
+  position:relative;z-index:1;
+}
+.message-img-wrap{position:relative}
+.message-img-wrap::after{
+  content:'';position:absolute;
+  bottom:-16px;right:-16px;
+  width:75%;height:75%;
+  border:3px solid var(--yellow);z-index:0;
+}
+.message-img-wrap img{
+  width:100%;height:400px;object-fit:cover;
+  position:relative;z-index:1;
+  filter:grayscale(20%);
+}
+.message-quote{
+  font-family:var(--display);font-size:80px;font-weight:700;
+  color:var(--yellow);opacity:0.3;line-height:1;
+  margin-bottom:-20px;
+}
+.message-title{
+  font-family:var(--serif);font-size:clamp(20px,2.5vw,28px);
+  font-weight:700;color:var(--navy);margin-bottom:24px;line-height:1.5;
+  letter-spacing:0.03em;
+}
+.message-text{
+  font-size:15px;color:var(--text-light);line-height:2.1;
+  margin-bottom:32px;
+}
+.message-sign{
+  display:flex;align-items:flex-end;gap:12px;
+  border-top:1px solid var(--gray-light);padding-top:20px;
+}
+.message-sign-role{font-size:12px;color:var(--gray);letter-spacing:0.08em;margin-bottom:4px}
+.message-sign-name{
+  font-family:var(--serif);font-size:22px;font-weight:700;
+  color:var(--navy);letter-spacing:0.05em;
+}
+
+/* COMPANY TABLE */
+.table-section{padding:96px 0}
+.company-table{
+  width:100%;border-collapse:collapse;
+  margin-top:40px;
+}
+.company-table tr{border-bottom:1px solid var(--gray-light)}
+.company-table tr:first-child{border-top:1px solid var(--gray-light)}
+.company-table th{
+  width:180px;padding:22px 24px;
+  text-align:left;font-size:13px;font-weight:700;
+  color:var(--navy);background:var(--yellow-pale);
+  vertical-align:top;letter-spacing:0.04em;
+}
+.company-table td{
+  padding:22px 24px;font-size:14px;
+  color:var(--text-light);line-height:1.85;
+}
+
+/* ACCESS */
+.access-section{background:var(--navy-dark);padding:96px 0}
+.access-section .section-title{color:#fff}
+.access-section .section-label{color:var(--yellow)}
+.map-wrap{
+  margin-top:40px;border:4px solid var(--yellow);
+  overflow:hidden;
+}
+.map-wrap iframe{
+  width:100%;height:420px;border:none;display:block;
+}
+.access-info{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:24px;
+  margin-top:32px;
+}
+.access-item{
+  background:var(--navy-mid);padding:24px;
+  border-top:3px solid var(--yellow);
+}
+.access-item-label{
+  font-family:var(--display);font-size:11px;font-weight:700;
+  letter-spacing:0.15em;color:var(--yellow);margin-bottom:8px;
+}
+.access-item-val{font-size:14px;color:rgba(255,255,255,0.8);line-height:1.75}
+
+/* CTA BAND */
+.cta-band{background:linear-gradient(90deg,var(--yellow) 0%,var(--yellow-lt) 50%,var(--yellow) 100%);padding:56px 24px;text-align:center}
+.cta-band h2{font-family:var(--serif);font-size:clamp(20px,2.5vw,30px);font-weight:700;color:var(--navy-dark);margin-bottom:12px;letter-spacing:0.03em}
+.cta-band p{font-size:14px;color:var(--navy-mid);margin-bottom:28px;line-height:1.8}
+.btn-dark{display:inline-block;background:var(--navy-dark);color:#fff;font-size:14px;font-weight:700;padding:16px 40px;letter-spacing:0.08em;transition:background .2s,transform .2s}
+.btn-dark:hover{background:var(--navy);transform:translateY(-2px)}
+
+/* FOOTER */
+.site-footer{background:var(--navy-dark);padding:64px 0 0;color:rgba(255,255,255,0.7)}
+.footer-inner{max-width:1160px;margin:0 auto;padding:0 24px;display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:48px}
+.footer-logo a{display:flex;align-items:center;gap:12px;margin-bottom:16px}
+.footer-logo .company{font-family:var(--serif);font-size:16px;font-weight:700;color:#fff}
+.footer-logo .tagline{font-size:10px;color:rgba(255,255,255,0.45);letter-spacing:0.12em;margin-top:2px}
+.footer-desc{font-size:13px;line-height:1.85;margin-bottom:20px}
+.footer-tel{font-family:var(--display);font-size:24px;font-weight:700;color:var(--yellow-lt)}
+.footer-address{font-size:12px;margin-top:8px;line-height:1.7}
+.footer-col h4{font-size:12px;font-weight:700;letter-spacing:0.12em;color:var(--yellow);text-transform:uppercase;margin-bottom:20px;padding-bottom:8px;border-bottom:1px solid rgba(255,255,255,0.1)}
+.footer-col ul{list-style:none}
+.footer-col ul li{margin-bottom:10px}
+.footer-col ul li a{font-size:13px;color:rgba(255,255,255,0.65);transition:color .2s}
+.footer-col ul li a:hover{color:var(--yellow-lt)}
+.footer-bottom{margin-top:48px;padding:20px 24px;border-top:1px solid rgba(255,255,255,0.1);text-align:center;font-size:12px;color:rgba(255,255,255,0.35)}
+
+@media(max-width:900px){
+  .global-nav,.header-tel,.btn-header{display:none}
+  .hamburger{display:flex}
+  .message-inner{grid-template-columns:1fr;gap:40px}
+  .access-info{grid-template-columns:1fr}
+  .company-table th{width:130px;padding:16px}
+  .company-table td{padding:16px}
+  .footer-inner{grid-template-columns:1fr}
+}
+@media(max-width:600px){
+  .section{padding:64px 0}
+  .message-section{padding:64px 0}
+  .table-section{padding:64px 0}
+  .access-section{padding:64px 0}
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="site-header">
+  <div class="logo">
+    <a href="index.html">
+      <div class="logo-mark">
+        <svg viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+      </div>
+      <div class="logo-text">
+        <div class="company">村山電設</div>
+        <div class="tagline">MURAYAMA DENSETSU</div>
+      </div>
+    </a>
+  </div>
+  <nav class="global-nav">
+    <ul>
+      <li><a href="index.html">TOP</a></li>
+      <li><a href="service.html">施工案内</a></li>
+      <li><a href="works.html">施工実績</a></li>
+      <li><a href="company.html" class="active">会社概要</a></li>
+      <li><a href="recruit.html">採用情報</a></li>
+      <li><a href="contact.html">お問い合わせ</a></li>
+    </ul>
+  </nav>
+  <div class="header-right">
+    <div class="header-tel">
+      <div class="tel-label">お気軽にご相談ください</div>
+      <div class="tel-num">048-989-6501</div>
+    </div>
+    <a href="contact.html" class="btn-header">無料相談</a>
+  </div>
+  <button class="hamburger" id="hamburger" aria-label="メニュー">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+<nav class="mobile-menu" id="mobile-menu">
+  <a href="index.html">TOP</a>
+  <a href="service.html">施工案内</a>
+  <a href="works.html">施工実績</a>
+  <a href="company.html">会社概要</a>
+  <a href="recruit.html">採用情報</a>
+  <a href="contact.html">お問い合わせ</a>
+  <div class="m-tel">048-989-6501</div>
+</nav>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <div class="page-hero-label">COMPANY</div>
+  <h1>会社概要</h1>
+  <p>越谷の電気工事を20年以上支えてきた、村山電設について</p>
+  <div class="breadcrumb">
+    <a href="index.html">TOP</a><span>›</span><span>会社概要</span>
+  </div>
+</div>
+
+<!-- MESSAGE -->
+<section class="message-section">
+  <div class="message-inner">
+    <div class="message-img-wrap fade-up">
+      <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&q=80" alt="代表 村山浩一">
+    </div>
+    <div class="fade-up" style="transition-delay:.2s">
+      <div class="section-label">MESSAGE</div>
+      <div class="message-quote">"</div>
+      <h2 class="message-title">
+        電気工事は、<br>見えないところで<br>暮らしを守る仕事です。
+      </h2>
+      <p class="message-text">
+        電気工事は、完成すると壁の中に隠れてしまうものがほとんどです。だからこそ、見えないところにこそ手を抜かず、安全で確実な施工を心がけることが私たちの使命だと考えています。
+      </p>
+      <p class="message-text" style="margin-top:-8px">
+        越谷市を中心に20年以上、住宅・店舗・工場のお客様に育てていただきました。「村山電設に頼んでよかった」と言っていただける仕事を、これからも一件一件、誠実に積み重ねてまいります。
+      </p>
+      <div class="message-sign">
+        <div>
+          <div class="message-sign-role">代表　PRESIDENT</div>
+          <div class="message-sign-name">村山 浩一</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMPANY TABLE -->
+<section class="table-section">
+  <div class="section-inner">
+    <div class="fade-up">
+      <div class="section-label">COMPANY INFO</div>
+      <h2 class="section-title">会社概要</h2>
+    </div>
+    <table class="company-table fade-up">
+      <tr>
+        <th>会社名</th>
+        <td>村山電設</td>
+      </tr>
+      <tr>
+        <th>代表者</th>
+        <td>村山 浩一</td>
+      </tr>
+      <tr>
+        <th>所在地</th>
+        <td>〒343-0822 埼玉県越谷市大間野町４－２１４－４</td>
+      </tr>
+      <tr>
+        <th>電話番号</th>
+        <td><a href="tel:0489896501" style="color:var(--navy);font-weight:600">048-989-6501</a></td>
+      </tr>
+      <tr>
+        <th>業種</th>
+        <td>電気工事業</td>
+      </tr>
+      <tr>
+        <th>対応エリア</th>
+        <td>埼玉県全域（越谷市・草加市・春日部市・さいたま市・三郷市・吉川市・八潮市 他）・東京都一部</td>
+      </tr>
+      <tr>
+        <th>主な施工内容</th>
+        <td>一般住宅電気工事 / 店舗・事務所電気工事 / 工場・設備電気工事 / 太陽光・省エネ設備工事</td>
+      </tr>
+      <tr>
+        <th>営業時間</th>
+        <td>8:00〜18:00（日曜・祝日定休）</td>
+      </tr>
+      <tr>
+        <th>保証</th>
+        <td>施工後10年保証（対象工事による）</td>
+      </tr>
+      <tr>
+        <th>許認可</th>
+        <td>電気工事業 登録済</td>
+      </tr>
+    </table>
+  </div>
+</section>
+
+<!-- ACCESS -->
+<section class="access-section">
+  <div class="section-inner">
+    <div class="fade-up">
+      <div class="section-label">ACCESS</div>
+      <h2 class="section-title">アクセス・地図</h2>
+    </div>
+    <div class="map-wrap fade-up">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3237.2!2d139.795!3d35.883!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2s%E5%9F%BC%E7%8E%89%E7%9C%8C%E8%B6%8A%E8%B0%B7%E5%B8%82%E5%A4%A7%E9%96%93%E9%87%8E%E7%94%BA4-214-4!5e0!3m2!1sja!2sjp!4v1234567890"
+        allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+        title="村山電設 地図">
+      </iframe>
+    </div>
+    <div class="access-info fade-up">
+      <div class="access-item">
+        <div class="access-item-label">ADDRESS</div>
+        <div class="access-item-val">〒343-0822<br>埼玉県越谷市大間野町４－２１４－４</div>
+      </div>
+      <div class="access-item">
+        <div class="access-item-label">HOURS</div>
+        <div class="access-item-val">8:00〜18:00<br>（日曜・祝日定休）</div>
+      </div>
+      <div class="access-item">
+        <div class="access-item-label">PHONE</div>
+        <div class="access-item-val"><a href="tel:0489896501" style="color:var(--yellow-lt);font-family:var(--display);font-size:20px;font-weight:700">048-989-6501</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BAND -->
+<div class="cta-band">
+  <h2>まずはお気軽にご相談ください</h2>
+  <p>現地調査・お見積もりはすべて無料です。電話・メールどちらでもお受けしています。</p>
+  <a href="contact.html" class="btn-dark">お問い合わせ・無料相談</a>
+</div>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div>
+      <div class="footer-logo">
+        <a href="index.html">
+          <div style="width:36px;height:36px;background:var(--yellow);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+            <svg viewBox="0 0 24 24" style="width:22px;height:22px;fill:var(--navy-dark)"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+          </div>
+          <div class="logo-text">
+            <div class="company">村山電設</div>
+            <div class="tagline">MURAYAMA DENSETSU</div>
+          </div>
+        </a>
+      </div>
+      <p class="footer-desc">越谷市を中心に埼玉東部エリアの電気工事を20年以上担ってきた地域密着の電気工事店。住宅から工場まで幅広く対応します。</p>
+      <div class="footer-tel">048-989-6501</div>
+      <div class="footer-address">〒343-0822 埼玉県越谷市大間野町４－２１４－４<br>受付 8:00〜18:00（日曜・祝日定休）</div>
+    </div>
+    <div class="footer-col">
+      <h4>Services</h4>
+      <ul>
+        <li><a href="service.html">一般住宅電気工事</a></li>
+        <li><a href="service.html">店舗・事務所電気工事</a></li>
+        <li><a href="service.html">工場・設備電気工事</a></li>
+        <li><a href="service.html">太陽光・省エネ設備</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Pages</h4>
+      <ul>
+        <li><a href="index.html">TOP</a></li>
+        <li><a href="service.html">施工案内</a></li>
+        <li><a href="works.html">施工実績</a></li>
+        <li><a href="company.html">会社概要</a></li>
+        <li><a href="recruit.html">採用情報</a></li>
+        <li><a href="contact.html">お問い合わせ</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">© 2024 村山電設 All Rights Reserved.</div>
+</footer>
+
+<script>
+const ham = document.getElementById('hamburger');
+const menu = document.getElementById('mobile-menu');
+ham.addEventListener('click', () => {
+  ham.classList.toggle('open');
+  menu.classList.toggle('open');
+});
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); });
+}, {threshold: 0.1});
+document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
